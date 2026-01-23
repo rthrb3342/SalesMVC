@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authentication.Negotiate;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using SalesWebMVC.Data;
+using SalesWebMVC.Models;
 using System.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
