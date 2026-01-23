@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using SalesWebMVC.Data;
+using System.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,7 +19,18 @@ builder.Services.AddAuthorization(options =>
 });
 builder.Services.AddRazorPages();
 builder.Services.AddDbContext<SalesWebMVCContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("SalesWebMVCContext") ?? throw new InvalidOperationException("Connection string 'SalesWebMVCContext' not found.")));
+{
+    var connectionString =
+        builder.Configuration.GetConnectionString("SalesWEBMVCContext");
+
+    options.UseMySql(
+        connectionString,
+        ServerVersion.AutoDetect(connectionString),
+        mySqlOptions =>
+            mySqlOptions.MigrationsAssembly("SalesWebMVC")
+    );
+});
+
 
 var app = builder.Build();
 
