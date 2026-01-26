@@ -4,6 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 using SalesWebMVC.Models;
 using System.Configuration;
 using SalesWebMVC.Data;
+using SalesWebMVC.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -34,7 +35,7 @@ builder.Services.AddDbContext<SalesWebMVCContext>(options =>
 });
 
 builder.Services.AddScoped<SeedingService>();
-
+builder.Services.AddScoped<SellerService>();
 
 var app = builder.Build();
 
