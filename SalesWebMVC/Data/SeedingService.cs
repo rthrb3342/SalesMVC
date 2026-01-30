@@ -12,6 +12,176 @@ namespace SalesWebMVC.Data
             _context = context;
         }
 
+
+        //public void Seed()
+        //{
+        //    // Garante que só roda uma vez
+        //    if (_context.Department.Any() ||
+        //        _context.Seller.Any() ||
+        //        _context.SalesRecord.Any())
+        //    {
+        //        return;
+        //    }
+
+        //    // --------------------
+        //    // Departments
+        //    // --------------------
+        //    var d1 = new Department { Name = "Computers" };
+        //    var d2 = new Department { Name = "Electronics" };
+        //    var d3 = new Department { Name = "Fashion" };
+        //    var d4 = new Department { Name = "Books" };
+
+
+        //    // --------------------
+        //    // Sellers
+        //    // --------------------
+        //    var s1 = new Seller
+        //    {
+        //        Name = "Bob Brown",
+        //        Email = "jenjarjostini@gmail.com",
+        //        BirthDate = new DateTime(1998, 4, 21),
+        //        BaseSalary = 1000.0,
+        //        Department = d1
+        //    };
+
+        //    var s2 = new Seller
+        //    {
+        //        Name = "Maria Green",
+        //        Email = "maria@gmail.com",
+        //        BirthDate = new DateTime(1979, 12, 31),
+        //        BaseSalary = 3500.0,
+        //        Department = d2
+        //    };
+
+        //    var s3 = new Seller
+        //    {
+        //        Name = "Alex Grey",
+        //        Email = "alex@gmail.com",
+        //        BirthDate = new DateTime(1988, 1, 15),
+        //        BaseSalary = 2200.0,
+        //        Department = d1
+        //    };
+
+        //    var s4 = new Seller
+        //    {
+        //        Name = "Martha Red",
+        //        Email = "martha@gmail.com",
+        //        BirthDate = new DateTime(1993, 11, 30),
+        //        BaseSalary = 3000.0,
+        //        Department = d4
+        //    };
+
+        //    var s5 = new Seller
+        //    {
+        //        Name = "Donald Blue",
+        //        Email = "donald@gmail.com",
+        //        BirthDate = new DateTime(2000, 1, 9),
+        //        BaseSalary = 4000.0,
+        //        Department = d3
+        //    };
+
+        //    var s6 = new Seller
+        //    {
+        //        Name = "Alex Pink",
+        //        Email = "bob@gmail.com",
+        //        BirthDate = new DateTime(1997, 3, 4),
+        //        BaseSalary = 3000.0,
+        //        Department = d2
+        //    };
+
+
+        //    // --------------------
+        //    // Sales Records
+        //    // --------------------
+        //    var sales = new List<SalesRecord>
+        //{
+        //    new SalesRecord
+        //    {
+        //        Date = new DateTime(2023, 9, 25),
+        //        Amount = 11000.0,
+        //        Status = SalesStatus.Billed,
+        //        Seller = s1
+        //    },
+        //    new SalesRecord
+        //    {
+        //        Date = new DateTime(2023, 9, 4),
+        //        Amount = 7000.0,
+        //        Status = SalesStatus.Billed,
+        //        Seller = s5
+        //    },
+        //    new SalesRecord
+        //    {
+        //        Date = new DateTime(2023, 9, 13),
+        //        Amount = 4000.0,
+        //        Status = SalesStatus.Canceled,
+        //        Seller = s4
+        //    },
+        //    new SalesRecord
+        //    {
+        //        Date = new DateTime(2023, 9, 1),
+        //        Amount = 8000.0,
+        //        Status = SalesStatus.Billed,
+        //        Seller = s1
+        //    },
+        //    new SalesRecord
+        //    {
+        //        Date = new DateTime(2023, 9, 21),
+        //        Amount = 3000.0,
+        //        Status = SalesStatus.Billed,
+        //        Seller = s3
+        //    },
+        //    new SalesRecord
+        //    {
+        //        Date = new DateTime(2023, 9, 15),
+        //        Amount = 2000.0,
+        //        Status = SalesStatus.Billed,
+        //        Seller = s1
+        //    },
+        //    new SalesRecord
+        //    {
+        //        Date = new DateTime(2023, 9, 28),
+        //        Amount = 13000.0,
+        //        Status = SalesStatus.Billed,
+        //        Seller = s2
+        //    },
+        //    new SalesRecord
+        //    {
+        //        Date = new DateTime(2023, 9, 11),
+        //        Amount = 4000.0,
+        //        Status = SalesStatus.Billed,
+        //        Seller = s4
+        //    },
+        //    new SalesRecord
+        //    {
+        //        Date = new DateTime(2023, 9, 14),
+        //        Amount = 11000.0,
+        //        Status = SalesStatus.Pending,
+        //        Seller = s6
+        //    },
+        //    new SalesRecord
+        //    {
+        //        Date = new DateTime(2023, 9, 7),
+        //        Amount = 9000.0,
+        //        Status = SalesStatus.Billed,
+        //        Seller = s6
+        //    }
+        //};
+
+        //    // Departments
+        //    _context.Department.AddRange(d1, d2, d3, d4);
+        //    _context.SaveChanges();
+
+        //    // Sellers
+        //    _context.Seller.AddRange(s1, s2, s3, s4, s5, s6);
+        //    _context.SaveChanges();
+        //    // SalesRecords
+        //    _context.SalesRecord.AddRange(sales);
+        //    _context.SaveChanges();
+        //}
+
+
+
+
         public void Seed()
         {
             if (_context.Department.Any() ||
