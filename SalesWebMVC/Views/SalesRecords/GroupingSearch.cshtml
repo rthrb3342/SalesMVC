@@ -1,7 +1,72 @@
-﻿
+﻿@model IEnumerable<IGrouping<Department, SalesRecord>>
+
 @{
     ViewData["Title"] = "Grouping Search";
+    DateTime minDate = DateTime.Parse(ViewData["minDate"] as string);
+    DateTime maxDate = DateTime.Parse(ViewData["maxDate"] as string);
 }
 
 <h1>@ViewData["Title"]</h1>
 
+<nav class="navbar navbar-inverse">
+    <div class="form-group">
+        <form class="navbar-form navbar-left" role="search">
+            <div class="form-group">
+                <label for="minDate">Min Date</label>
+                <input type="date" class="form-control" name="minDate" value=@ViewData["minDate"] />
+            </div>
+            <div>
+                <div class="form-group">
+                    <label for="maxDate">Max Date</label>
+                    <input type="date" class="form-control" name="maxDate" value=@ViewData["maxDate"] />
+                </div>
+            </div>
+            <button type="submit" class="btn btn-dark">Filter</button>
+        </form>
+    </div>
+</nav>
+
+@foreach (var departmentGroup in Model)
+{
+    <div class="panel panel-primar">
+        <div class="panel-heading">
+            <h3 class="panel-title">@departmentGroup.Key.Name - Total sales = @departmentGroup.Sum(obj => obj.Amount).ToString("F2")</h3>
+        </div>
+        <div class="panel-body">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr class="success">
+                        <th>
+                            @Html.DisplayNameFor(model => model.FirstOrDefault().FirstOrDefault().Id)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.FirstOrDefault().FirstOrDefault().Date)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.FirstOrDefault().FirstOrDefault().Seller)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.FirstOrDefault().FirstOrDefault().Amount)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.FirstOrDefault().FirstOrDefault().Status)
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in departmentGroup)
+                    {
+                        <tr>
+                            <td>@item.Id</td>
+                            <td>@item.Date.ToString("dd/MM/yyyy")</td>
+                            <td>@item.Seller.Name</td>
+                            <td>@item.Seller.Department.Name</td>
+                            <td>@item.Amount.ToString("F2")</td>
+                            <td>@item.Status</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>   
+}
